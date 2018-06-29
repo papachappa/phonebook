@@ -1,0 +1,70 @@
+Test plan for phonebook app:
+
+Positive cases:
+    1. App is correctly executed on Ubuntu platform:
+        Steps:
+            1. Get the app
+            2. In Ubuntu terminal type "python3 app.py"
+        Expected result:
+            String with prompt:
+            "Welcome to the phonebook shell. Type help or ? to list commands.
+            (phonebook)"
+
+    2. Add record to phonebook:
+        Steps:
+            1. In the phonebook prompt type "add John_Mayer 12345"
+        Expected result:
+            String with prompt:
+            "(phonebook)"
+
+    3. List just added record:
+        Steps:
+            1. In the phonebook prompt type "list"
+        Expected result:
+            String:
+            "Phonebook has following entries:"
+            'John_Mayer' => 123
+
+    4. Search record in phonebook:
+        Steps:
+            1. In the phonebook prompt type "search John_Mayer"
+        Expected result:
+            String with prompt:
+            "Record with name 'John_Mayer' has number '12345'"
+
+    5. Delete record from phonebook:
+        Steps:
+            1. In the phonebook prompt type "delete John_Mayer"
+            Expected result:
+                String with prompt:
+                "Record with name 'John_Mayer' was deleted"
+            2. In the phonebook prompt type "list"
+            Expected result:
+                String with prompt:
+                "Phonebook has following entries:"
+
+Negative cases:
+    1. Add record to phonebook with inproper syntax:
+        Steps:
+            1. In the phonebook prompt type "add John Mayer 12345"
+        Expected result:
+            String with prompt:
+            "use add <username_without_spaces> <number>"
+    2. Search non existed record in phonebook:
+        Steps:
+            1. In the phonebook prompt type "search ASDFGH"
+        Expected result:
+            String with prompt:
+            "No such name in the phonebook"
+    3. Delete non existed record in phonebook:
+        Steps:
+            1. In the phonebook prompt type "delete ASDFGH"
+        Expected result:
+            String with prompt:
+            "No such name in the phonebook"
+    4. Type unknown command in prompt
+        Steps:
+            1. In the phonebook prompt type "ASDFG"
+        Expected result:
+            String with prompt:
+            "*** Unknown syntax: sdfgsdf sdf"
